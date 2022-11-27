@@ -1,13 +1,74 @@
-
+<meta charset="UTF-8">
 <html>
-	<head>
-		<style type="text/css">
-			body {
-				background-image: url("c.png")	
-			}
-		</style>
-	</head>
-	<body>
-		
-	</body>
+<head>
+    <script>
+        function getCurrentTime() {
+            let d = new Date()
+            hours = d.getHours()
+            minutes = d.getMinutes()
+            seconds = d.getSeconds()
+            if (hours < 10) {
+                shours = "0" + hours
+            } else {
+                shours = "" + hours
+            }
+
+            if (minutes < 10) {
+                sminutes = "0" + minutes
+            } else {
+                sminutes = "" + minutes
+            }
+
+            if (seconds < 10) {
+                sseconds = "0" + seconds
+            } else {
+                sseconds = "" + seconds
+            }
+            stime = shours + ":" + sminutes + ":" + sseconds
+            ele = document.getElementById("time_holder")
+            ele.innerHTML = stime
+            return stime;
+        }
+
+        setInterval(getCurrentTime, 1000)
+    </script>
+
+    <style>
+        body {
+            background-image: url('p4.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+        #time_holder {
+            position: absolute;
+            top: 230px;
+            left:250px;
+            font-family: "serif";
+            font-size: 132px;
+            color: white;
+            font-weight: bold;
+        }
+
+        #date_holder {
+            position: absolute;
+            top: 400px;
+            left:340px;
+            font-family: "serif";
+            font-size: 45px;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="time_holder">
+
+    </div>
+    <div id="date_holder">
+        11月28日 星期一
+    </div>
+</body>
 </html>
