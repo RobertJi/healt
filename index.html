@@ -2,6 +2,26 @@
 <html>
 <head>
     <script>
+        function getCurrentDate() {
+            let d = new Date()
+            month = d.getMonth()
+            days = d.getDate()
+            weekofday = d.getDay()
+            sweekofday = ""
+            switch (weekofday) {
+                case 1: sweekofday = "一";break;
+                case 2: sweekofday = "二";break;
+                case 3: sweekofday = "三";break;
+                case 4: sweekofday = "四";break;
+                case 5: sweekofday = "五";break;
+                case 6: sweekofday = "六";break;
+                case 7: sweekofday = "日";break;
+            }
+            s = "" + (month+1) + "月" + days + "日 星期" + sweekofday
+            ele = document.getElementById("date_holder")
+            ele.innerHTML = s
+        }
+        
         function getCurrentTime() {
             let d = new Date()
             hours = d.getHours()
@@ -31,6 +51,7 @@
         }
 
         setInterval(getCurrentTime, 1000)
+        setTimeout(getCurrentDate, 1000);
     </script>
 
     <style>
@@ -68,7 +89,7 @@
 
     </div>
     <div id="date_holder">
-        11月28日 星期一
+
     </div>
 </body>
 </html>
